@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARBON FOOTPRINT CALCULATOR</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>CARBON FOOTPRINT CALCULATOR</h1>
+        <form>
+            <label for="Electricity">Electricity Usage(kWh):</label><br>
+            <input type="number" id="Electricity" placeholder="Enter electricity usage"><br>
+            <label for="Fuel">Fuel Usage(kWh):</label><br>
+            <input type="number" id="Fuel" placeholder="Enter fuel uasage"><br>
+            <label for="Transport">Transport Usage(kWh):</label><br>
+            <input type="number" id="Transport" placeholder="Enter transport uasage"><br>
+            <button type="button" class="calculate">
+                Calculate
+            </button>
+            <button type="button" class=" reset">
+                Reset
+            </button>
+            <button type="button" class="return">
+                Return
+            </button>
+            <a href="IMPACT.html" class="impact-btn">Check Impact</a>
+
+
+        </form>
+        <!-- Result container -->
+        <div class="result-box">
+            <p id="result-text">Your result will appear here...</p>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+
+</html>

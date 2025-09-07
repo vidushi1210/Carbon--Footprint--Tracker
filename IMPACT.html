@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impact Visualization</title>
+    <link rel="stylesheet" href="IMPACT.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>CARBON FOOTPRINT TRACKER</h1>
+            <ul>
+                <a href="Dashboard.html">
+                    <li>OVERVIEW</li>
+                </a>
+                <a href="calculator.html">
+                    <li>CALCULATOR</li>
+                </a>
+                <a href="IMPACT.html">
+                    <li>IMPACT</li>
+                </a>
+                <a href="index.html">
+                    <li>HOME</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="impact-container">
+        <h2>Your Environmental Impact</h2>
+        <p>Based on your carbon footprint, here’s what it means in real-world terms:</p>
+
+        <div class="impact-cards">
+            <div class="card">
+                <h3>Trees Needed 🌳</h3>
+                <p id="trees">--</p>
+                <small>Number of trees needed to absorb your monthly emissions</small>
+            </div>
+
+            <div class="card">
+                <h3>Car Miles 🚗</h3>
+                <p id="miles">--</p>
+                <small>Equivalent miles driven by an average car</small>
+            </div>
+
+            <div class="card">
+                <h3>Flights ✈️</h3>
+                <p id="flights">--</p>
+                <small>Equivalent short-haul flights taken</small>
+            </div>
+        </div>
+
+        <button onclick="calculateImpact()">See My Impact</button>
+    </main>
+</body>
+<script src="IMPACT.js"></script>
+
+</html>

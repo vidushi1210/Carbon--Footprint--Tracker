@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f8fa;
+}
+
+header {
+    background: #2c3e50;
+    padding: 15px;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.impact-container {
+    text-align: center;
+    padding: 40px;
+}
+
+.impact-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+.card p {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #27ae60;
+}
+
+button {
+    padding: 12px 20px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #219150;
+}
+
+.impact-message {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #ffe5e5;
+    color: #b30000;
+    border: 1px solid #ff4d4d;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}

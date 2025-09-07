@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dash-Board</title>
+    <link rel="stylesheet" href="Dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>CARBON FOOTPRINT DASHBOARD</h1>
+            <ul>
+                <a href="#OVERVIEW">
+                    <li>OVERVIEW</li>
+                </a>
+                <a href="calculator.html">
+                    <li>CARBON FOOTPRINT CALCULATOR</li>
+                </a>
+                <a href="IMPACT.html">
+                    <li>IMPACT VISULIZATION</li>
+                </a>
+                <a href="index.html">
+                    <li>HOME</li>
+                </a>
+            </ul>
+            <!--  Dark Mode Toggle -->
+            <button id="darkModeToggle">🌙</button>
+        </nav>
+    </header>
+
+    <main>
+        <!--  Greeting Section -->
+        <div class="greeting">
+            <h2>Welcome back 👋</h2>
+            <p>Here’s your carbon footprint summary for this month.</p>
+        </div>
+
+        <div class="st">
+            <div class="overview">
+                <h2>OVERVIEW</h2>
+                <p>Your total carbon footprint this month:</p>
+                <button id="resetBtn">Reset</button>
+
+                <!-- Doughnut Chart -->
+                <div class="chart-container">
+                    <canvas id="myDoughnutChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Fetch saved values from localStorage or set default 0
+        let transport = parseFloat(localStorage.getItem("transport")) || 0;
+        let electricity = parseFloat(localStorage.getItem("electricity")) || 0;
+        let fuel = parseFloat(localStorage.getItem("fuel")) || 0;
+
+        //  Chart.js setup
+        const ctx = document.getElementById('myDoughnutChart').getContext('2d');
+        const myDoughnutChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Transport', 'Electricity', 'Fuel'],
+                datasets: [{
+                    label: 'Carbon Emissions (kg CO₂)',
+                    data: [transport, electricity, fuel],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.7)',
+                        'rgba(54, 162, 235, 0.7)',
+                        'rgba(255, 206, 86, 0.7)'
+                    ],
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    title: {
+                        display: true,
+                        text: 'Carbon Footprint Breakdown',
+                        font: { size: 18 }
+                    }
+                }
+            }
+        });
+
+        // Reset button clears localStorage & updates chart
+        document.getElementById("resetBtn").addEventListener("click", () => {
+            localStorage.removeItem("transport");
+            localStorage.removeItem("electricity");
+            localStorage.removeItem("fuel");
+            localStorage.removeItem("carbonFootprint");
+            myDoughnutChart.data.datasets[0].data = [0, 0, 0];
+            myDoughnutChart.update();
+        });
+
+        //  Dark Mode Toggle
+        const toggleBtn = document.getElementById("darkModeToggle");
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            toggleBtn.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+        });
+    </script>
+</body>
+
+</html>
